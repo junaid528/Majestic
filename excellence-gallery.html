@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View the Excellence Gallery of Majestic Primary and High School, Mysore. Showcasing academic achievements, student awards, and moments of excellence.">
+    <meta name="keywords" content="excellence gallery Majestic School Mysore, student achievements, awards, academic excellence, photo gallery">
+    <meta name="author" content="Majestic Primary and High School">
+    <link rel="canonical" href="https://www.majesticschoolmysore.com/excellence-gallery.html">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <title>Excellence Gallery | Majestic Primary and High School, Mysore</title>
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --premium-blue: #1e3a8a;
+            --premium-gold: #facc15;
+            --premium-green: #2e7d32;
+            --soft-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #fdfdfd;
+            color: #334155;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* --- PREMIUM HERO --- */
+        .gallery-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('assets/school_building.jpeg') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .gallery-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            background: linear-gradient(to right, #fff, var(--premium-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .gallery-hero p {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+
+        /* --- GALLERY GRID --- */
+        .gallery-section {
+            padding: 100px 0;
+        }
+
+        .section-header-pro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header-pro h2 {
+            font-size: 2.8rem;
+            color: var(--premium-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-header-pro p {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid-pro {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .gallery-item-pro {
+            position: relative;
+            height: 400px;
+            border-radius: 40px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: 0.5s;
+        }
+
+        .gallery-item-pro img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item-pro:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay-pro {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(30, 58, 138, 0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .gallery-item-pro:hover .gallery-overlay-pro {
+            opacity: 1;
+        }
+
+        .gallery-overlay-pro h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .gallery-overlay-pro p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-hero h1 { font-size: 2.5rem; }
+            .gallery-item-pro { height: 300px; }
+            .gallery-overlay-pro { padding: 25px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ✦ NEWS TICKER -->
+    <div class="news-ticker">
+        <div class="ticker-content">
+            <span>✦ ADMISSIONS OPEN 2026–27 (CLASSES 1–9) ✦</span>
+            <span>Shaping Minds for a Better Tomorrow</span>
+        </div>
+    </div>
+
+    <!-- 🌟 TOP INFO BAR -->
+    <div class="top-info-bar">
+        <div class="top-info-container">
+            <div class="top-info-left">
+                <a href="tel:+917892053860" id="top-phone-link" title="Call Majestic School">
+                    <i class="fas fa-phone"></i>
+                </a>
+                <a href="mailto:majestichps@gmail.com" id="top-email-link" title="Email Majestic School">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <div class="center-text">
+                <i class="fas fa-bullhorn"></i>
+                ADMISSIONS OPEN 2026–27 (LIMITED SEATS)
+            </div>
+
+            <div class="top-info-right">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🌟 MAIN NAVBAR (Sticky) -->
+        </div>
+
+        <!-- ✦ SCHOOL BRANDING STRIP -->
+    <div class="school-branding-strip">
+        <div class="branding-container">
+            <div class="branding-text">
+                <h1 class="branding-title">MAJESTIC PRIMARY & HIGH SCHOOL</h1>
+                <p class="branding-subtitle">Shaping Minds for a Better Tomorrow</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <nav class="main-navbar">
+        <div class="nav-container">
+            <!-- MOBILE LOGO -->
+            <div class="mobile-logo">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Majestic School Logo" style="height: 44px; width: auto; object-fit: contain;">
+                </a>
+            </div>
+
+            <!-- LEFT MENU -->
+            <ul class="nav-left">
+                <li class=""><a href="index.html">HOME</a></li>
+                <li class="dropdown">
+                    <a href="about.html">ABOUT <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="about.html">About the Institution</a></li>
+                        <li><a href="vision-values.html">Vision & Core Values</a></li>
+                        <li><a href="guiding-philosophy.html">Guiding Philosophy</a></li>
+                        <li><a href="annual-report.html">Annual Insights Report</a></li>
+                    </ul>
+                </li>
+                <li class=""><a href="chairman.html">CHAIRMAN</a></li>
+                <li class="dropdown">
+                    <a href="#">GENERAL INFO <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="school-timings.html">School Timings</a></li>
+                        <li><a href="parent-guidelines.html">Parent Guidelines</a></li>
+                        <li><a href="student-guidelines.html">Student Guidelines</a></li>
+                        <li><a href="safety-security.html">Safety & Security</a></li>
+                        <li><a href="handbook-downloads.html">School Handbook / Downloads</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- CENTER LOGO -->
+            <div class="logo-center">
+                <a href="index.html">
+                    <img src="assets/logo.png" alt="Majestic School Logo">
+                </a>
+            </div>
+
+            <!-- RIGHT MENU -->
+            <ul class="nav-right">
+                <li class=""><a href="admissions.html">ADMISSIONS</a></li>
+                <li class="dropdown">
+                    <a href="academics.html">ACADEMICS <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="academics.html">Academic Programs</a></li>
+                        <li><a href="faculty-mentors.html">Faculty & Mentors</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="achievements.html">ACHIEVEMENTS <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="academic-outcomes.html">Academic Outcomes</a></li>
+                        <li><a href="student-achievements.html">Student Achievements</a></li>
+                        <li><a href="excellence-gallery.html">Excellence Gallery</a></li>
+                    </ul>
+                </li>
+                <li class=""><a href="contact.html">CONTACT</a></li>
+                <li><a href="login.html" class="login-btn">LOGIN</a></li>
+            </ul>
+
+            <!-- HAMBURGER -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 🌟 HERO -->
+    <header class="gallery-hero">
+        <div class="hero-content" data-aos="zoom-out">
+            <p>Moments of Pride</p>
+            <h1>Excellence Gallery</h1>
+        </div>
+    </header>
+
+    <!-- 🌟 GALLERY CONTENT -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header-pro" data-aos="fade-up">
+                <h2>Visual Milestones</h2>
+                <p>Capturing the essence of achievement, creativity, and the vibrant life at Majestic School.</p>
+            </div>
+
+            <div class="gallery-grid-pro">
+                <div class="gallery-item-pro" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071&auto=format&fit=crop" alt="Academic Awards" referrerPolicy="no-referrer">
+                    <div class="gallery-overlay-pro">
+                        <h3>Academic Laurels</h3>
+                        <p>Celebrating top performers in national level competitive exams and board toppers.</p>
+                    </div>
+                </div>
+                <div class="gallery-item-pro" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=2070&auto=format&fit=crop" alt="Cultural Fest" referrerPolicy="no-referrer">
+                    <div class="gallery-overlay-pro">
+                        <h3>Cultural Vibrancy</h3>
+                        <p>Memorable moments from our annual inter-school cultural festival and talent showcase.</p>
+                    </div>
+                </div>
+                <div class="gallery-item-pro" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1511551203524-9a24350a5bc2?q=80&w=2070&auto=format&fit=crop" alt="Sports Day" referrerPolicy="no-referrer">
+                    <div class="gallery-overlay-pro">
+                        <h3>Sporting Spirit</h3>
+                        <p>Action shots from the District Athletics Meet where our students displayed true grit.</p>
+                    </div>
+                </div>
+                <div class="gallery-item-pro" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1932&auto=format&fit=crop" alt="Science Exhibition" referrerPolicy="no-referrer">
+                    <div class="gallery-overlay-pro">
+                        <h3>Innovation Hub</h3>
+                        <p>Highlights from the Science & Technology Exhibition where curiosity meets creativity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🌟 FOOTER -->
+        <!-- 🌟 FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid-premium">
+                <!-- COLUMN 1: GET IN TOUCH -->
+                <div class="footer-col-premium" id="footer-get-in-touch">
+                    <h4 class="footer-heading">Get In Touch</h4>
+                    <ul class="footer-contact-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="contact-text">Aziz Sait Road, Mysuru, Karnataka</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span class="contact-text"><a href="tel:+917892053860" class="contact-link">+91 78920 53860</a></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span class="contact-text"><a href="mailto:majestichps@gmail.com" class="contact-link">majestichps@gmail.com</a></span>
+                        </li>
+                    </ul>
+                    <div class="footer-social-section">
+                        <div class="social-icons-premium">
+                            <a href="https://facebook.com" target="_blank" class="social-icon-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://instagram.com" target="_blank" class="social-icon-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com" target="_blank" class="social-icon-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            <a href="https://linkedin.com" target="_blank" class="social-icon-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMN 2: MAIN MENU -->
+                <div class="footer-col-premium" id="footer-main-menu">
+                    <h4 class="footer-heading">Main Menu</h4>
+                    <ul class="footer-menu-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right link-arrow"></i>Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right link-arrow"></i>About Us</a></li>
+                        <li><a href="chairman.html"><i class="fas fa-chevron-right link-arrow"></i>Chairman</a></li>
+                        <li><a href="academics.html"><i class="fas fa-chevron-right link-arrow"></i>Academics</a></li>
+                        <li><a href="admissions.html"><i class="fas fa-chevron-right link-arrow"></i>Admissions</a></li>
+                        <li><a href="achievements.html"><i class="fas fa-chevron-right link-arrow"></i>Achievements</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right link-arrow"></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMN 3: CONNECT WITH US -->
+                <div class="footer-col-premium" id="footer-connect-with-us">
+                    <h4 class="footer-heading">Connect With Us</h4>
+                    <p class="footer-tagline">Empowering Young Minds for a Better Tomorrow</p>
+                    <form class="footer-newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for connecting with us!'); this.reset();">
+                        <div class="newsletter-wrapper">
+                            <input type="email" placeholder="Your Email Address" required class="newsletter-input" aria-label="Your Email Address">
+                            <button type="submit" class="newsletter-btn btn-click-action" id="footer-connect-submit">Connect</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- BOTTOM FOOTER BAR -->
+            <div class="footer-bottom-bar">
+                <div class="footer-bottom-left">
+                    <p class="copyright-text">&copy; 2026 Majestic Primary & High School. All Rights Reserved.</p>
+                </div>
+                <div class="footer-bottom-center">
+                    <ul class="bottom-policy-links">
+                        <li><a href="#" class="policy-link">Privacy Policy</a></li>
+                        <li><a href="#" class="policy-link">Terms of Service</a></li>
+                        <li><a href="#" class="policy-link">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-bottom-right">
+                    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="scroll-to-top-btn" aria-label="Scroll to top" id="scroll-to-top-button">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+
+</html>
+

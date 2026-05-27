@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin dashboard for Majestic Primary and High School, Mysore. Manage students, staff, admissions, and school operations.">
+    <meta name="keywords" content="admin dashboard Majestic School Mysore, school management, student management, administrative tools">
+    <meta name="author" content="Majestic Primary and High School">
+    <link rel="canonical" href="https://www.majesticschoolmysore.com/admin-dashboard.html">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <title>Admin Dashboard | Majestic Primary and High School, Mysore</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Admin Dashboard | Majestic Primary and High School, Mysore">
+    <meta property="og:description" content="School administration and management dashboard.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:url" content="https://www.majesticschoolmysore.com/admin-dashboard.html">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Admin Dashboard | Majestic Primary and High School, Mysore">
+    <meta property="og:description" content="School administration and management dashboard.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:url" content="https://www.majesticschoolmysore.com/admin-dashboard.html">
+    <meta property="og:type" content="website">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-wrapper">
+        <nav class="side-nav">
+            <div class="logo text-center">
+                <img src="assets/logo.png" referrerPolicy="no-referrer" alt="Logo" height="60" style="margin-bottom: 15px;">
+                <h3 style="font-size: 1rem; color: var(--accent-yellow); text-transform: uppercase; letter-spacing: 2px;">Admin Panel</h3>
+            </div>
+            <ul class="side-links">
+                <li class="active"><a href="#"><i class="fas fa-users"></i> <span>Manage Users</span></a></li>
+                <li><a href="#"><i class="fas fa-bullhorn"></i> <span>Announcements</span></a></li>
+                <li><a href="#"><i class="fas fa-graduation-cap"></i> <span>Admissions</span></a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+                <li class="logout"><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a></li>
+            </ul>
+        </nav>
+
+        <main class="dashboard-content">
+            <div class="dash-header">
+                <h2>Administrative Dashboard</h2>
+                <div class="user-meta">
+                    <span class="user-role">Administrator</span>
+                </div>
+            </div>
+
+            <div class="grid-3 margin-top" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px;">
+                <div class="dash-card">
+                    <h3>Total Users</h3>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--primary-blue);" id="totalUsersCount">0</div>
+                </div>
+                <div class="dash-card">
+                    <h3>Active Sessions</h3>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--secondary-green);">12</div>
+                </div>
+                <div class="dash-card">
+                    <h3>Pending Tasks</h3>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: var(--accent-yellow);">5</div>
+                </div>
+            </div>
+
+            <div class="dash-card" style="padding: 40px;">
+                <div class="flex-between" style="margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="margin: 0;">User Directory</h3>
+                    <input type="text" id="searchInput" placeholder="Quick search..." style="padding: 10px 20px; border-radius: 10px; border: 1px solid #ddd; width: 300px;">
+                </div>
+                
+                <div style="overflow-x: auto;">
+                    <table class="data-table" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: var(--light-bg); text-align: left;">
+                                <th style="padding: 15px;">ID</th>
+                                <th style="padding: 15px;">Name</th>
+                                <th style="padding: 15px;">Class</th>
+                                <th style="padding: 15px;">Parent</th>
+                                <th style="padding: 15px;">Email</th>
+                                <th style="padding: 15px;">Phone</th>
+                                <th style="padding: 15px;">Role</th>
+                                <th style="padding: 15px;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- Populated by dashboard.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal" style="display: none; position: fixed; z-index: 1000; inset: 0; background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);">
+        <div class="modal-content" style="background: white; max-width: 500px; margin: 100px auto; padding: 40px; border-radius: 20px; box-shadow: var(--shadow-premium);">
+            <div class="flex-between" style="margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="margin: 0; color: var(--primary-blue);">Update User</h2>
+                <span class="close" id="closeModal" style="cursor: pointer; font-size: 1.5rem;">&times;</span>
+            </div>
+            <form id="editForm">
+                <input type="hidden" id="editId">
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 5px;">Name</label>
+                    <input type="text" id="editName" required style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd;">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 5px;">Class</label>
+                        <input type="text" id="editClass" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd;">
+                    </div>
+                    <div>
+                        <label style="display: block; font-weight: 600; margin-bottom: 5px;">Role</label>
+                        <select id="editRole" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd; background: white;">
+                            <option value="student">Student</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 5px;">Parent Name</label>
+                    <input type="text" id="editParentName" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; font-weight: 600; margin-bottom: 5px;">Email</label>
+                    <input type="email" id="editEmail" required style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #ddd;">
+                </div>
+                <button type="submit" class="btn-main" style="width: 100%; border: none; padding: 15px; background: var(--primary-blue); color: white; border-radius: 10px; font-weight: 700; cursor: pointer;">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Additional page specific logic
+        window.addEventListener('DOMContentLoaded', () => {
+            fetchUsers().then(() => {
+                document.getElementById('totalUsersCount').textContent = allUsers.length;
+            });
+        });
+
+        // Search logic
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const text = e.target.value.toLowerCase();
+            const filtered = allUsers.filter(u => 
+                (u.name && u.name.toLowerCase().includes(text)) ||
+                (u.email && u.email.toLowerCase().includes(text))
+            );
+            renderUsers(filtered);
+        });
+
+        // Edit Modal logic
+        const modal = document.getElementById('editModal');
+        const closeModal = document.getElementById('closeModal');
+        
+        window.openEditModal = (user) => {
+            document.getElementById('editId').value = user.id;
+            document.getElementById('editName').value = user.name || '';
+            document.getElementById('editClass').value = user.class || '';
+            document.getElementById('editParentName').value = user.parentName || '';
+            document.getElementById('editEmail').value = user.email || '';
+            document.getElementById('editRole').value = user.role || 'student';
+            modal.style.display = "block";
+        };
+
+        closeModal.onclick = () => modal.style.display = "none";
+
+        document.getElementById('editForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('editId').value;
+            const data = {
+                name: document.getElementById('editName').value,
+                class: document.getElementById('editClass').value,
+                parentName: document.getElementById('editParentName').value,
+                email: document.getElementById('editEmail').value,
+                role: document.getElementById('editRole').value
+            };
+
+            const res = await fetch(`/api/users/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            if (res.ok) {
+                modal.style.display = "none";
+                fetchUsers();
+            }
+        });
+    </script>
+</body>
+</html>
